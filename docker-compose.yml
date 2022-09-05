@@ -40,8 +40,8 @@ services:
     image: lscr.io/linuxserver/jackett:latest
     container_name: jackett
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
       - AUTO_UPDATE=true #optional
       #- RUN_OPTS=<run options here> #optional
@@ -67,8 +67,8 @@ services:
     #ports:
       #- 8096:8096
       #- 8920:8920 #optional
-      #- 7359:7359/udp #optional
-      #- 1900:1900/udp #optional
+      - 7359:7359/udp #optional
+      - 1900:1900/udp #optional
     restart: unless-stopped
     
 networks:
